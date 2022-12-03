@@ -21,7 +21,11 @@ def get_one(condition):
     for i in response:
         i["_id"] = str(i["_id"])
         data.append(i)
-    return data[0]
+
+    if len(data) >> 0 :
+        return data[0]
+    else :
+        return get_last()
 
 def get_by_date(date):
     response = collection.find({"date": date}).sort("cnt",-1)
@@ -30,3 +34,12 @@ def get_by_date(date):
         i["_id"] = str(i["_id"])
         data.append(i)
     return data
+
+def get_last():
+    response = collection.find({}).sort([("date",-1), ("cnt",-1)])
+
+    data = []
+    for i in response:
+        i["_id"] = str(i["_id"])
+        data.append(i)
+    return data[0]
