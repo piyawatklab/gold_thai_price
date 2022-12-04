@@ -43,7 +43,6 @@ def get_one(request: Request, date="", price_type="ask"):
                'date': data["date"],
                'price': data["price_"+price_type],
                'price_type': price_type}
-
     return templates.TemplateResponse("item.html", context)
 
 
