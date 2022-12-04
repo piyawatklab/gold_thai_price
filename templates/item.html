@@ -1,4 +1,6 @@
-<html>
+<!DOCTYPE html>
+
+<html lang="en">
 
 <head>
     <title>Item Details</title>
@@ -6,7 +8,24 @@
 </head>
 
 <body>
-    <h1>Item ID: {{ id }}</h1>
+    <h1>Gold Price</h1>
+    <div class="center">
+        <form>
+            <p>Date: <input type="text" name="date" value="{{ date }}"> รูปแบบ: ปปปป(พ.ศ.)-ดด-วว (ตัวอย่าง: 2565-01-01)
+            </p>
+            <p>ask/bid:
+                <select name="price_type">
+                    <option value="ask" {% if price_type == "ask" %} selected {% endif %}>ask
+                    </option>
+                    <option value="bid" {% if price_type == "bid" %} selected {% endif %}>bid
+                    </option>
+                </select>
+            </p>
+            <input type="submit" value="ค้นหา"><br>
+            <p>{{ price }}</p>
+        </form>
+    </div>
+
 </body>
 
 </html>

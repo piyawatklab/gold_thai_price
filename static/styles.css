@@ -1,3 +1,11 @@
+.center {
+    margin: 20px 20%;
+    width: auto;
+    border: 3px solid rgb(219, 185, 30);
+    padding: 20px;
+}
+
 h1 {
-    color: green;
+    text-align: center;
+    color: #ff0000;
 }
