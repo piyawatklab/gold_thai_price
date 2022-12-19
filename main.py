@@ -13,10 +13,10 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 
-@app.get("/test/", response_class=HTMLResponse)
-def index(request: Request):
-    context = {'request': request, 'data': 75}
-    return templates.TemplateResponse("item.html", context)
+# @app.get("/test/", response_class=HTMLResponse)
+# def index(request: Request):
+#     context = {'request': request, 'data': 75}
+#     return templates.TemplateResponse("item.html", context)
 
 
 @app.get("/")
@@ -30,10 +30,10 @@ def get_all():
     return data
 
 
-@app.get("/get_current_price_api")
-def get_one(date: str):
-    data = db.get_one(date)
-    return data
+# @app.get("/get_current_price_api")
+# def get_one(date: str):
+#     data = db.get_one(date)
+#     return data
 
 
 @app.get("/get_current_price", response_class=HTMLResponse)
